@@ -1,0 +1,19 @@
+
+<div class="center">
+  <h2>LOGIN</h2>
+<div class="imgcontainer">
+    <img src="../assets/login.png" alt="Avatar" class="avatar">
+</div>
+  <form #regForm="ngForm"  (ngSubmit)=Details(regForm)>
+      <div class="from-group">
+     <i class="fa fa-user icon"></i><label>Username</label>
+      <input type="text"  name="name" class="form-control"ngModel>
+      </div>  
+      <br>
+      <i class="fa fa-key icon"></i><label>Password</label>
+      <input type="password" ngModel name="phn" class="form-control" >
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+

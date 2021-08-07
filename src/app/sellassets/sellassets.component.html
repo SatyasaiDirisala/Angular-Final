@@ -1,0 +1,23 @@
+<br><br>
+<div class="center">
+<h4>Sell Your Assets</h4>
+<form #regForm="ngForm"  (ngSubmit)=Details(regForm)>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Asset Name</th>
+                <th>No of Assets</th>
+                <th>Add to cart</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of assets">
+                <td>{{i.assetname}}</td>
+                <td><input type="number" ngModel name="No of Assets" class="form-control"></td>
+                <td><button class="btn btn-primary">Add&nbsp;&nbsp;<i class="fa fa-shopping-cart"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
