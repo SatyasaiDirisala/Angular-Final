@@ -4,14 +4,14 @@
 <div class="imgcontainer">
     <img src="../assets/login.png" alt="Avatar" class="avatar">
 </div>
-  <form #regForm="ngForm"  (ngSubmit)=Details(regForm)>
+  <form (ngSubmit)=Details()>
       <div class="from-group">
      <i class="fa fa-user icon"></i><label>Username</label>
-      <input type="text"  name="name" class="form-control"ngModel>
+      <input type="text"  name="userId" class="form-control" [(ngModel)]="userId">
       </div>  
       <br>
       <i class="fa fa-key icon"></i><label>Password</label>
-      <input type="password" ngModel name="phn" class="form-control" >
+      <input type="password" name="password" class="form-control" [(ngModel)]="password">
       <br>
       <button type="submit" class="btn btn-primary">Submit</button>
   </form>

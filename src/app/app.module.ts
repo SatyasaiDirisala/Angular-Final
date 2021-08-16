@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { NetworthComponent } from './networth/networth.component';
 import { SellassetsComponent } from './sellassets/sellassets.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import {LoginService} from './login.service';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,15 +20,17 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     NetworthComponent,
     SellassetsComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

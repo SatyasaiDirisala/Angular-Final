@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
+import {LoginService} from '../login.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,14 +9,29 @@ import {NgForm} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  userId:string;
+  password:string;
+  token:String;
 
-  ngOnInit(): void {
+  constructor(private router: Router,private _auth: LoginService, private _router: Router) { 
+     
   }
-  Details(regForm:NgForm)
+
+  ngOnInit() {
+  }
+  
+  Details()
   {
-    console.log(regForm.value);
+    if(this._auth.login(this.userId,this.password))
+    {
+      this.router.navigate(['home']);
+     
+    }
+    else{
+      alert("Invalid credentials");
+    this.router.navigate(['']);
+    }
 
+    
   }
-
 }
