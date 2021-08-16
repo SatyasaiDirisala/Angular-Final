@@ -29,7 +29,7 @@ export class LoginService {
     console.log(data);
     },(error:HttpErrorResponse)=>
     {alert("Invalid Credentials");
-    this.router.navigate(['login'])}
+    this.router.navigate([''])}
     );
     localStorage.setItem('currentUser',this.userid);
     localStorage.setItem('accessToken',this.token);
